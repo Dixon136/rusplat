@@ -1,121 +1,5 @@
-ss
-/* --- Общие стили --- */
-body {
-    font-family: 'Arial', sans-serif; /* Выбираем шрифт */
-    margin: 0; /* Убираем стандартные отступы у body */
-    padding: 0;
-    background-color: #e0f7fa; /* Светлый голубой фон для всего сайта */
-    display: flex; /* Используем flexbox для центрирования */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали */
-    min-height: 100vh; /* Минимальная высота равна высоте экрана */
-    color: #333; /* Основной цвет текста */
-}
-
-.container {
-    max-width: 600px; /* Максимальная ширина контейнера */
-    width: 100%; /* Занимает всю доступную ширину */
-    padding: 20px;
-    box-sizing: border-box; /* Учитывает padding в общей ширине */
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #00796b; /* Темно-бирюзовый заголовок */
-}
-
-/* --- Стили для формы --- */
-.form-box {
-    background-color: #ffffff; /* Белый фон для карточки формы */
-    padding: 40px 30px;
-    border-radius: 10px; /* Скругленные углы */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Красивая тень */
-    text-align: center;
-}
-
-.input-group {
-    margin-bottom: 25px;
-    text-align: left; /* Метки выравниваются по левому краю */
-}
-
-.input-group label {
-    display: block; /* Метка всегда на новой строке */
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #00796b;
-}
-
-.input-group input[type="text"],
-.input-group input[type="password"] {
-    width: 100%; /* Поле ввода занимает всю ширину */
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box; /* Учитывает padding в общей ширине */
-    font-size: 1em;
-}
-
-.input-group input[type="text"]:focus,
-.input-group input[type="password"]:focus {
-    outline: none; /* Убираем стандартное выделение при фокусе */
-    border-color: #00796b; /* Меняем цвет рамки при фокусе */
-    box-shadow: 0 0 5px rgba(0, 121, 107, 0.3); /* Легкая тень при фокусе */
-}
-
-/* --- Стили для выбора роли --- */
-.role-select {
-    display: flex;
-    justify-content: space-around; /* Распределяем элементы по краям */
-    align-items: center;
-    flex-wrap: wrap; /* Разрешаем перенос на новую строку, если не хватает места */
-}
-
-.role-select label {
-    font-weight: normal; /* Убираем жирность для меток радиокнопок */
-    margin-bottom: 0; /* Убираем нижний отступ */
-    cursor: pointer; /* Курсор в виде руки */
-    display: flex;
-    align-items: center;
-    margin: 5px 10px; /* Небольшие отступы */
-}
-
-.role-select input[type="radio"] {
-    margin-right: 8px;
-    cursor: pointer;
-    accent-color: #00796b; /* Цвет галочки радиокнопки */
-}
-
-/* --- Стили для кнопки --- */
-button[type="submit"] {
-    width: 100%;
-    padding: 15px;
-    background-color: #00796b; /* Цвет кнопки */
-    color: white; /* Белый текст на кнопке */
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
-}
-
-button[type="submit"]:hover {
-    background-color: #004d40; /* Более темный цвет при наведении */
-}
-
-.message {
-    margin-top: 20px;
-    color: #d32f2f; /* Цвет для сообщений об ошибке */
-    font-size: 0.9em;
-}
-
-.message.success {
-    color: #388e3c; /* Цвет для сообщений об успехе */
-}
-
-/* --- Стили для второй страницы (account.html) --- */
-.account-box {
+/* --- Стили для страницы подтверждения (confirmation.html) --- */
+.confirmation-box {
     background-color: #ffffff;
     padding: 40px 30px;
     border-radius: 10px;
@@ -123,120 +7,80 @@ button[type="submit"]:hover {
     text-align: center;
 }
 
-.account-box h2 {
+.confirmation-box h2 {
     margin-bottom: 30px;
     color: #00796b;
 }
 
-.account-box p {
-    margin-bottom: 20px;
+.confirmation-box p {
+    margin-bottom: 15px;
     font-size: 1.1em;
     color: #555;
 }
 
-.amount-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Опции пополнения */
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.amount-option {
-    background-color: #e0f7fa; /* Светло-голубой фон опции */
-    padding: 15px 10px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: 2px solid transparent; /* Прозрачная рамка для подсветки */
-}
-
-.amount-option.selected {
-    background-color: #00796b; /* Выбранная опция */
-    color: white;
-    border-color: #004d40;
-    transform: translateY(-5px); /* Небольшой подъем */
-}
-
-.amount-option span {
-    font-size: 1.3em;
-    font-weight: bold;
-}
-
-.custom-amount {
-    margin-bottom: 30px;
-}
-
-.custom-amount label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #00796b;
-}
-
-.custom-amount input[type="number"] {
-    width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 1.1em;
-}
-
-.custom-amount input[type="number"]:focus {
-    outline: none;
-    border-color: #00796b;
-    box-shadow: 0 0 5px rgba(0, 121, 107, 0.3);
-}
-
-.crypto-wallet {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee; /* Разделительная линия */
-}
-
-.crypto-wallet p {
+.confirmation-box .min-deposit-info {
     font-size: 1em;
-    color: #777;
-    word-wrap: break-word; /* Перенос длинных слов */
-}
-
-.crypto-wallet a {
-    color: #00796b;
-    text-decoration: none;
+    color: #d32f2f; /* Красный цвет для предупреждения */
     font-weight: bold;
-    transition: color 0.3s ease;
+    margin-bottom: 25px;
 }
 
-.crypto-wallet a:hover {
-    color: #004d40;
-    text-decoration: underline;
+.amount-display {
+    font-size: 2em;
+    font-weight: bold;
+    color: #00796b;
+    margin-bottom: 30px;
 }
 
-/* --- Адаптивность (для мобильных устройств) --- */
-@media (max-width: 768px) {
-    body {
-        padding: 10px; /* Уменьшаем padding на мобильных */
-    }
-    .form-box, .account-box {
-        padding: 30px 20px; /* Уменьшаем padding формы */
-    }
-    h2 {
-        font-size: 1.8em;
-    }
-    .amount-options {
-        grid-template-columns: 1fr 1fr; /* Две колонки на мобильных */
-    }
+.wallet-info {
+    background-color: #e0f7fa; /* Светло-голубой фон для информации о кошельке */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
 }
 
-@media (max-width: 480px) {
-    .role-select {
-        flex-direction: column; /* Радиокнопки вертикально */
-        align-items: flex-start;
-    }
-    .role-select label {
-        margin-bottom: 10px;
-    }
-    .amount-options {
-        grid-template-columns: 1fr; /* Одна колонка на очень маленьких экранах */
-    }
+.wallet-info p {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.wallet-address {
+    font-size: 1.1em;
+    word-break: break-all; /* Перенос длинных адресов */
+    color: #004d40; /* Темно-бирюзовый для адреса */
+    font-weight: bold;
+}
+
+.timer-display {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #d32f2f; /* Красный для таймера */
+    margin-bottom: 20px;
+}
+
+.note {
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+    margin-top: 30px;
+}
+
+/* Стили для кнопки "Вернуться" на странице подтверждения */
+.confirmation-box button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00796b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.confirmation-box button:hover {
+    background-color: #004d40;
 }
