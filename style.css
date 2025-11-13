@@ -1,9 +1,138 @@
+/* ОБЩИЕ СТИЛИ ДЛЯ BODY (ФОН) */
 body {
-    background-image: url('https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Ftextur.gas-kvas.com%2F12366-trejdinga.html&ved=0CBUQjRxqFwoTCPiRoYKC8JADFQAAAAAdAAAAABAI&opi=89978449'); /* Укажите правильный путь к файлу */
-    background-size: cover; /* Изображение покроет весь фон, не обрезаясь, сохраняя пропорции */
-    background-position: center center; /* Центрирует изображение */
-    background-repeat: no-repeat; /* Предотвращает повторение изображения */
-    background-attachment: fixed; /* (Опционально) Изображение будет фиксировано при прокрутке */
+    margin: 0; /* Убираем стандартные отступы браузера */
+    font-family: 'Inter', 'Roboto', sans-serif; /* Пример современных шрифтов */
+    
+    /* --- ДОБАВЛЯЕМ ВАШЕ ФОНОВОЕ ИЗОБРАЖЕНИЕ --- */
+    background-image: url('textur-gas-kvas-com-vlpu-p-teksturi-treidin-torgovli-final-dlya-sajta.webp');
+    background-size: cover; /* Изображение будет покрывать весь фон */
+    background-position: center center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+    background-attachment: fixed; /* Изображение будет фиксировано при прокрутке */
+    
+    /* Используем flexbox для центрирования содержимого (вашей формы) */
+    display: flex;
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    min-height: 100vh; /* Занимаем всю высоту вьюпорта */
+    
+    color: #333; /* Цвет текста по умолчанию для страницы */
+}
+
+/* ОВЕРЛЕЙ (ПОЛУПРОЗРАЧНОЕ НАЛОЖЕНИЕ) ДЛЯ ФОНА */
+/* Это очень важно, чтобы текст и форма на переднем плане были читаемыми */
+body::before {
+    content: '';
+    position: fixed; /* Фиксируем наложение на весь экран */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Пример: Темное наложение с 40% прозрачности.
+       Экспериментируйте с rgba(0, 0, 0, 0.X) для темного или rgba(255, 255, 255, 0.X) для светлого. */
+    background-color: rgba(0, 0, 0, 0.4); 
+    z-index: -1; /* Помещаем наложение ПОД основным контентом */
+}
+
+/* СТИЛИ ДЛЯ КАРТОЧКИ ФОРМЫ */
+.form-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Светлый полупрозрачный фон для формы */
+    padding: 40px;
+    border-radius: 12px; /* Скругленные углы */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Мягкая тень */
+    max-width: 450px; /* Ограничиваем ширину формы */
+    width: 90%; /* Адаптивная ширина */
+    text-align: center; /* Центрируем содержимое внутри карточки */
+    
+    /* Если вы хотите, чтобы форма была центрирована через margin, а не flexbox body: */
+    /* margin: 80px auto; */ 
+    /* В этом случае уберите display: flex и связанные свойства из body */
+}
+
+/* Стили для заголовка формы внутри карточки */
+.form-card h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Стили для групп ввода (метка + поле) */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left; /* Выравниваем метки и поля по левому краю */
+}
+
+.input-group label {
+    display: block;
+
+       margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Стили для полей ввода */
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: calc(100% - 24px); /* 100% минус padding слева и справа */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* Важно, чтобы padding не увеличивал общую ширину */
+}
+
+/* Эффект при фокусе на полях ввода */
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff; /* Акцентный цвет, например, синий */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Легкая тень при фокусе */
+}
+
+/* Стили для выбора роли (радиокнопок) */
+.role-selection {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.role-selection label {
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    color: #555;
+}
+
+.role-selection input[type="radio"] {
+    margin-right: 8px;
+    transform: scale(1.2); /* Слегка увеличим радиокнопки для лучшей видимости */
+    accent-color: #007bff; /* Акцентный цвет для радиокнопок */
+}
+
+/* Стили для кнопки "Зарегистрироваться" */
+button.register-button {
+    background-color: #007bff; /* Акцентный цвет */
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавный переход цвета */
+    width: 100%;
+}
+
+button.register-button:hover {
+    background-color: #0056b3; /* Чуть темнее при наведении */
+}
+
+/* Стили для сообщения об успешной регистрации */
+.success-message {
+    margin-top: 25px;
+    font-size: 16px;
+    color: #28a745; /* Зеленый цвет для успеха */
+    font-weight: bold;
+    display: none; /* Скрыть по умолчанию, показывать через JavaScript */
 }
 /* --- Общие стили --- */
 body {
