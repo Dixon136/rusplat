@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -11,10 +10,11 @@
     <div class="container">
         <div class="account-box">
             <h2>Пополнение счета</h2>
+            <p class="min-deposit-info">Минимальная сумма пополнения: 100 USD.</p>
+
             <p>Выберите сумму, на которую хотите пополнить ваш счет:</p>
 
             <div class="amount-options">
-                <!-- data-amount содержит значение суммы -->
                 <div class="amount-option" data-amount="100"><span>100</span> USD</div>
                 <div class="amount-option" data-amount="500"><span>500</span> USD</div>
                 <div class="amount-option" data-amount="1000"><span>1000</span> USD</div>
@@ -25,17 +25,11 @@
                 <input type="number" id="customAmount" placeholder="Введите сумму">
             </div>
 
-            <p>Выбрано: <strong id="selectedAmount"></strong></p>
+            <p>Выбрано: <strong id="selectedAmount">0 USD</strong></p> <!-- По умолчанию 0 USD -->
 
             <button id="depositButton">Пополнить</button>
 
-            <div class="crypto-wallet" style="display: none;"> <!-- Скрыто по умолчанию -->
-                <p>Пожалуйста, отправьте выбранную сумму на следующий крипто-кошелек USDT TRC20:</p>
-                <p><strong><span id="cryptoWallet">TTxL8srvCqom7RebeyZAjuWyActK9R9SD4</span></strong></p>
-                <p><em>Средства будут зачислены после подтверждения транзакции в сети.</em></p>
-            </div>
-
-            <p class="message"></p> <!-- Место для сообщений -->
+            <p class="message"></p> <!-- Место для сообщений об ошибке -->
         </div>
     </div>
 
