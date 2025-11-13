@@ -1,3 +1,10 @@
+body {
+    background-image: url('https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Ftextur.gas-kvas.com%2F12366-trejdinga.html&ved=0CBUQjRxqFwoTCPiRoYKC8JADFQAAAAAdAAAAABAI&opi=89978449'); /* Укажите правильный путь к файлу */
+    background-size: cover; /* Изображение покроет весь фон, не обрезаясь, сохраняя пропорции */
+    background-position: center center; /* Центрирует изображение */
+    background-repeat: no-repeat; /* Предотвращает повторение изображения */
+    background-attachment: fixed; /* (Опционально) Изображение будет фиксировано при прокрутке */
+}
 /* --- Общие стили --- */
 body {
     font-family: 'Arial', sans-serif; /* Выбираем шрифт */
