@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="style.css"> <!-- Подключаем наш CSS файл -->
+</head>
+<body>
+    <div class="container">
+        <div class="form-box registration-form">
+            <h2>Создать аккаунт</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Повторить пароль:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div class="input-group">
+                    <label>Ваша роль:</label>
+                    <div class="role-select">
+                        <input type="radio" id="roleTrader" name="role" value="trader" checked>
+                        <label for="roleTrader">Обычный трейдер</label>
+
+                        <input type="radio" id="roleTeamLead" name="role" value="team_lead">
+                        <label for="roleTeamLead">Team Lead</label>
+                    </div>
+                </div>
+                <button type="submit">Зарегистрироваться</button>
+                <p class="message"></p> <!-- Место для сообщений об ошибке/успехе -->
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Подключаем наш JS файл -->
+</body>
+</html>
