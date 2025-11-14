@@ -461,3 +461,125 @@ button[type="submit"]:hover {
 .confirmation-box button:hover {
     background-color: #004d40;
 }
+
+.deposit-card {
+    /* ... стили карточки, как мы обсуждали ранее ... */
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 500px; /* Возможно, чуть шире для этой формы */
+    width: 90%;
+    text-align: center;
+}
+
+.deposit-card h2 {
+    font-size: 32px;
+    color: #007bff; /* Акцентный цвет, например */
+    margin-bottom: 20px;
+}
+
+.deposit-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.amount-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Промежуток между кнопками */
+    margin-bottom: 30px;
+}
+
+.amount-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.amount-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.amount-btn.active-amount { /* Стиль для выбранной кнопки */
+    background-color: #007bff; /* Акцентный цвет */
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.or-text {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.custom-amount-input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#customAmountInput {
+    width: 180px; /* Ширина поля ввода */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px 0 0 8px; /* Скругление только слева */
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+#customAmountInput:focus {
+    border-color: #007bff;
+}
+
+.currency-label {
+    background-color: #eee;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-left: none; /* Убираем левую границу */
+    border-radius: 0 8px 8px 0; /* Скругление только справа */
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+}
+
+.selected-amount-display {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+.deposit-button {
+    background-color: #cccccc; /* Неактивная кнопка - серый */
+    color: #888888;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: not-allowed; /* Курсор "нет" для неактивной кнопки */
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.deposit-button.active { /* Стиль для активной кнопки */
+    background-color: #007bff; /* Акцентный цвет */
+    color: white;
+    cursor: pointer;
+}
+
+.deposit-button.active:hover {
+    background-color: #0056b3;
+}
