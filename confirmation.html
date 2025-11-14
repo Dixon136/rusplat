@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Подтверждение пополнения</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <div class="confirmation-box">
-            <h2>Подтверждение пополнения</h2>
-            <p>Ваша выбранная сумма для пополнения:</p>
-            <p class="amount-display"><strong id="finalAmount">0 USD</strong></p>
+<div class="deposit-card">
+    <h2>Пополнение счета</h2>
+    <p>Минимальная сумма пополнения: 100 USD.</p>
+    <p>Выберите сумму, на которую хотите пополнить ваш счет:</p>
 
-            <p>Пожалуйста, отправьте указанную сумму на следующий крипто-кошелек USDT TRC20:</p>
-            <div class="wallet-info">
-                <p>Адрес кошелька:</p>
-                <p class="wallet-address"><strong id="cryptoWallet">TTxL8srvCqom7RebeyZAjuWyActK9R9SD4</strong></p>
-                <!-- Важно: Замените "ВАШ_КРИПТО_КОШЕЛЕК_ЗДЕСЬ" на ваш реальный адрес -->
-            </div>
-
-            <p>Транзакция должна быть завершена в течение:</p>
-            <div class="timer-display"><span id="countdown">15:00</span></div>
-
-            <p class="note"><em>Средства будут зачислены после подтверждения транзакции в сети. После истечения таймера, пожалуйста, вернитесь на страницу пополнения.</em></p>
-
-            <button onclick="window.location.href='account.html'">Вернуться на страницу пополнения</button>
-        </div>
+    <div class="amount-buttons">
+        <!-- Кнопки с предопределенными суммами -->
+        <button class="amount-btn" data-amount="100">100 USD</button>
+        <button class="amount-btn" data-amount="500">500 USD</button>
+        <button class="amount-btn" data-amount="1000">1000 USD</button>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <p class="or-text">Или введите свою сумму:</p>
+    <div class="custom-amount-input-group">
+        <input type="number" id="customAmountInput" placeholder="Введите сумму" min="100">
+        <span class="currency-label">USD</span>
+    </div>
+
+    <p class="selected-amount-display">Выбрано: <span id="selectedAmountValue">0</span> USD</p>
+
+    <button id="depositButton" class="deposit-button" disabled>Пополнить</button>
+</div>
+
+<!-- Важно: Подключите ваш JavaScript-файл перед закрывающим тегом </body> -->
+<script src="code2.js"></script>
