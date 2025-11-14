@@ -21,3 +21,39 @@
     <button id="depositButton" class="deposit-button" disabled>Пополнить</button>
 </div>
 
+ <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Пополнение счета</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <div class="deposit-card">
+            <h2>Пополнение счета</h2>
+            <p>Минимальная сумма пополнения: 100 USD.</p>
+            <p>Выберите сумму, на которую хотите пополнить ваш счет:</p>
+
+            <div class="amount-buttons">
+                <button class="amount-btn" data-amount="100">100 USD</button>
+                <button class="amount-btn" data-amount="500">500 USD</button>
+                <button class="amount-btn" data-amount="1000">1000 USD</button>
+            </div>
+
+            <p class="or-text">Или введите свою сумму:</p>
+            <div class="custom-amount-input-group">
+                <input type="number" id="customAmountInput" placeholder="Введите сумму" min="100">
+                <span class="currency-label">USD</span>
+            </div>
+
+            <p class="selected-amount-display">Выбрано: <span id="selectedAmountValue">0</span> USD</p>
+
+            <button id="depositButton" class="deposit-button" disabled>Пополнить</button>
+        </div>
+
+        <!-- ОЧЕНЬ ВАЖНО: Подключение script.js -->
+        <script src="code2.js"></script> 
+    </body>
+    </html>
